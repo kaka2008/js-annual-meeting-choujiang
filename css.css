@@ -1,0 +1,70 @@
+body,div,a{padding:0;margin:0}
+body{
+	width:1280px;
+	height:800px;
+	text-align:center;
+	position:relative;
+	background:url(images/bg_wrapper.jpg) no-repeat;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.wrapper{
+	width:656px;
+	margin:0 auto;
+	padding-top:204px;
+}
+.wrapper .btn_scroll{
+	display:block;
+	width:298px;
+	height:50px;
+	border:0;
+	background:url(images/btn_start.jpg) no-repeat bottom;
+}
+.wrapper .changbg{
+	display:block;
+	width:298px;
+	height:50px;
+	border:0;
+	background:url(images/btn_end.jpg) no-repeat bottom;	
+	}
+.wrapper, .scrollNum,.btn_scroll,.no1,.no2,.no3,.changbg{
+	margin:0 auto;
+	font-weight:bold;
+}
+.wrapper .scrollNum{
+	width:298px;
+	height:85px;
+	line-height:85px;
+	font-size:35px;
+	font-weight:bold;
+	background:url(images/bg_scrollNum.jpg) no-repeat;
+}
+.wrapper h2{
+	font-size:20px;
+	font-weight:bold;
+	font-family:"����";
+}
+.wrapper .no1{
+	width:393px;
+	height:37px;
+	line-height:37px;
+	background:url(images/bg_no1_03.jpg) no-repeat #fff;
+}
+.wrapper .no2{
+	width:524px;
+	height:75px;
+	line-height:37px;
+	background:url(images/bg_no2.jpg) repeat-y #fff;
+}
+.wrapper .no3{
+	width:568px;
+	height:75px;
+	background:url(images/bg_no3.jpg) no-repeat #fff;
+}
+.wrapper .no1 tr td,.no2 tr td{
+	width:131px;
+	height:30px;
+}
+.wrapper .no3 tr td{
+	width:113.6px;
+	height:30px;
+}

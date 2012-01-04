@@ -1,0 +1,169 @@
+<!DOCTYPE html >
+<head>
+<meta charset="utf-8" />
+<title>长城所2012幸运转转转</title>
+<link rel="stylesheet" href="css.css">
+<script language="javascript">
+<!-- 
+	// global variables
+	var timer;
+	var flag = new Array(200);
+	var existingnum = new Array(200);
+	var clickTimes = 0;
+	var randnum;
+	var cellnum =0;
+	var mobile = new Array();
+	
+	var map = new Object();
+	// set data here!!
+	var i=0;
+	
+	var employees = [{"id":"a08025","name":"张三"},{"id":"a10079","name":"李四"},{"id":"a99001","name":"王五"},{"id":"a06001","name":"赵六"},{"id":"a00012","name":"王涛"},{"id":"a02017","name":"姚明"},{"id":"a93001","name":"科比"},{"id":"a93002","name":"詹姆斯"},{"id":"a93003","name":"梅西"},{"id":"a06056","name":"哈维"},{"id":"a10100","name":"伊涅斯塔"},{"id":"a95011","name":"乔布斯"},{"id":"a08014","name":"小法"},{"id":"a03001","name":"马赛罗"},{"id":"a10083","name":"陪陪"},{"id":"a10029","name":"拉莫斯"},{"id":"a00009","name":"卡西"},{"id":"a11089","name":"卡卡"},{"id":"a11042","name":"阿隆索"},{"id":"a07067","name":"厄齐儿"},{"id":"a11175","name":"本泽马"},{"id":"a10158","name":"伊瓜因"},{"id":"a10074","name":"佩德罗"},{"id":"a11119","name":"皮克"},{"id":"a11012","name":"普约尔"},{"id":"a09032","name":"巴尔德斯"},{"id":"a11009","name":"阿尔维斯"},{"id":"a11189","name":"阿比达尔"},{"id":"a10072","name":"比利亚"}]
+;
+	
+	for(;i<employees.length;i++){
+		mobile[i] = employees[i].id;
+		map[employees[i].id]=employees[i].name;
+	}
+	
+	//所领导
+	var num = mobile.length-1;
+	function getRandNum(){
+		num=parseInt(num);
+		var y=GetRnd(0,num);
+		document.getElementById("result").innerHTML = mobile[y];
+	}
+	function start(){
+		clearInterval(timer);
+		timer = setInterval('change()',50);
+	}
+	function ok(){
+		clearInterval(timer);
+	}
+	//得到随机数
+	function GetRnd(m,n){ 
+		randnum =parseInt(Math.random()*(n-m+1));
+		return randnum;
+	}
+	function setTimer(){
+		 time=setInterval("getRandNum()",10);
+		 document.getElementById("start").style.display = 'none';
+		 document.getElementById("end").style.display = 'block';
+	}
+	function clearTimer(){
+		 noDupNum();
+		 clearInterval(time);
+		 if(cellnum == 19){
+			document.getElementById("start").style.display = 'none';
+		 	document.getElementById("end").style.display = 'none';
+		 }else{
+			 document.getElementById("end").style.display = 'none';
+			 document.getElementById("start").style.display = 'block'; 
+			 document.getElementById("start").style.cursor = 'text'; 
+		 }
+		 document.getElementById("start").disabled = true; 
+		 c=0;
+		 result = null;
+		 setValues(); 
+	}
+	function noDupNum(){
+		 // to remove the selected mobile phone number
+		 mobile.removeEleAt(randnum);
+		 // to reorganize the mobile number array!!
+		 var o = 0;
+		 for(p=0; p<mobile.length;p++){
+			 if(typeof mobile[p]!="undefined"){
+				 mobile[o] = mobile[p];
+				 o++;
+			 }
+		 }
+		 num = mobile.length-1;
+	 }
+	// method to remove the element in the array
+	Array.prototype.removeEleAt = function(dx) {
+		 if(isNaN(dx)||dx>this.length){
+		    return false;
+		 }
+		 this.splice(dx,1);
+	 }
+	var c = 0;
+	var result = null;
+	// set mobile phone numbers to the table cell
+	function setValues(){
+		if(result == null){
+			result = document.getElementById("result").innerHTML;
+		}
+		var name = map[result];
+		var names = result+"("+name+")";
+		var ss = "";
+		var a = names.substring(0,c+1);
+		
+		if(c < names.length){
+			document.getElementById("result").innerHTML = a;
+		}
+		if(c == names.length){
+			document.getElementById(cellnum).innerHTML = name;
+			cellnum++;
+			document.getElementById("end").style.display = 'none';
+			document.getElementById("start").style.cursor = 'pointer';
+			if(cellnum < 20){
+		 	 document.getElementById("start").disabled = false; 
+			}
+		}else{
+			window.setTimeout("setValues()",500)
+		}
+		c++;
+ 	}
+	
+//--> 
+</script>
+</head>
+
+<body>
+	<div class="wrapper">
+    	<div class="scrollNum" id="result"> </div>
+		<input type="button" onClick="javascript:setTimer()" class="btn_scroll" id="start" style="cursor:pointer"/>
+		<input type="button" onClick="javascript:clearTimer()" class="changbg" id="end" style="display:none;cursor:pointer"/>
+        <h2>一等奖（3名）</h2>
+
+        <table cellpadding="0" cellspacing="0" class="no1" >
+        	<tr>
+            	<td id="18" width="131" height="30"> </td>
+                <td id="19" width="131" height="30"> </td>
+            </tr>
+        </table>
+        <h2>二等奖（8名）</h2>
+        <table cellpadding="0" cellspacing="0" class="no2" >
+        	<tr>
+            	<td id="10"> </td>
+                <td id="11"> </td>
+                <td id="12"> </td>
+                <td id="13"> </td>
+            </tr>
+			<tr>
+            	<td id="14"> </td>
+                <td id="15"> </td>
+                <td id="16"> </td>
+                <td id="17"> </td>
+            </tr>
+        </table>        
+        <h2>三等奖（10名）</h2>
+        <table cellpadding="0" cellspacing="0" class="no3">
+        	<tr>
+            	<td id="0"></td>
+                <td id="1"></td>
+                <td id="2"></td>
+                <td id="3"></td>
+                <td id="4"></td>               
+            </tr>
+        	<tr>
+            	<td id="5"> </td>
+                <td id="6"> </td>
+                <td id="7"> </td>
+                <td id="8"> </td>
+                <td id="9"> </td>            
+            </tr>
+        </table> 
+    </div>        
+</body>
+</html>
